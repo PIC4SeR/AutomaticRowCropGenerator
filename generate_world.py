@@ -21,13 +21,17 @@
 #     SOFTWARE.
 
 
-import bpy
-import os, sys, glob
-import random, math
-import yaml
+import glob
+import math
+import os
+import random
+import sys
 from shutil import copy2
 from string import Template
+
+import bpy
 import numpy as np
+import yaml
 from scipy.interpolate import griddata
 
 
@@ -107,39 +111,8 @@ def load_terrain(terrain_name, dest_file):
     Load terrain file and return height map callable function
     """
 
-    # Generate gazebo model for terrain
-    base_gazebo_path = os.path.join(workdir, 'gazebo', 'models')
-    if os.path.exists(os.path.join(base_gazebo_path, terrain_name)):
-        print("Skipping gazebo model terrain generation, model already exists")
-    else:
-        templates = load_templates(workdir)
-        terrains_folder_path = os.path.join(workdir, 'terrains')
-        obj = terrain_name+'.obj'
-        mtl = terrain_name+'.mtl'
-        meshes_path = os.path.join(base_gazebo_path, terrain_name, 'meshes')
-
-        os.makedirs(meshes_path, exist_ok=True)
-        copy2(os.path.join(terrains_folder_path, obj), os.path.join(meshes_path, obj))
-        copy2(os.path.join(terrains_folder_path, mtl), os.path.join(meshes_path, mtl))
-
-        gazebo_model_folder_path = os.path.join(base_gazebo_path, terrain_name)
-        with open(os.path.join(gazebo_model_folder_path, 'model.config'), 'w') as file:
-            template = templates['model_config_template']
-            file.write(template.substitute({
-                'model_name': terrain_name,
-                'author_name': 'Marco Ambrosio',
-                'author_email': 'marco.ambrosio@polito.it'
-            }))
-        
-        with open(os.path.join(gazebo_model_folder_path, 'model.sdf'), 'w') as file:
-            template = templates['model_sdf_template']
-            file.write(template.substitute({
-                'model_name': terrain_name,
-                'mesh_path': f'model://{terrain_name}/meshes/{obj}'
-            }))
-
     # Load terrain in blender and return height map
-    source_file = os.path.join(workdir, "terrains", terrain_name+".blend")
+    source_file = os.path.join(workdir, "terrains", terrain_name, terrain_name+".blend")
     print("Loading terrain from {}".format(source_file))
     with bpy.data.libraries.load(source_file) as (data_from, data_to):
         objects = []
@@ -194,7 +167,7 @@ def load_templates(workdir):
     return templates
 
 
-def generate_gazebo_models(workdir, plant_name):
+def generate_gazebo_models(workdir, plant_name, terrain_name):
     """
     Generate a standard Gazebo model (*.sdf) for each mesh file (*.obj) present in the folder.
     Returns a list of the names of the generated models.
@@ -205,33 +178,38 @@ def generate_gazebo_models(workdir, plant_name):
     base_models_path = os.path.join(workdir, 'plants', plant_name)
     base_gazebo_path = os.path.join(workdir, 'gazebo', 'models')
 
-    # Get list of obj and mtl files
-    obj_list = glob.glob('*.obj', root_dir=base_models_path)
-    obj_list.sort()
-    mtl_list = glob.glob('*.mtl', root_dir=base_models_path)
-    mtl_list.sort()
-    textures_list = [
-        *glob.glob('*.png', root_dir=base_models_path),
-        *glob.glob('*.jpg', root_dir=base_models_path),
-        *glob.glob('*.jpeg', root_dir=base_models_path),]
+    # Get list of models
+    models_folders = glob.glob(f'*{plant_name}*', root_dir=base_models_path)
+
 
     # Check if models already exist
-    if glob.glob(f'*{plant_name}*', root_dir=base_gazebo_path):
-        raise Exception(f"Models of {plant_name} already exist")
+    # if glob.glob(f'*{plant_name}*', root_dir=base_gazebo_path):
+    #     raise Exception(f"Models of {plant_name} already exist")
 
-    print(f"Found {len(obj_list)} obj files and {len(mtl_list)} mtl files")
+    print(f"Found {len(models_folders)} models for {plant_name}")
     models = []
-    for obj, mtl, i in zip(obj_list, mtl_list, range(1,len(obj_list)+1)):
-        model_name = plant_name+f'{i}'
+
+    # Generat plant models
+    for i, model_folder in enumerate(models_folders):
+        obj = glob.glob('*.obj', root_dir=os.path.join(base_models_path, model_folder))[0]
+        mtl = glob.glob('*.mtl', root_dir=os.path.join(base_models_path, model_folder))[0]
+
+        model_name = model_folder
         gazebo_model_folder_path = os.path.join(base_gazebo_path, model_name)
         meshes_path = os.path.join(base_gazebo_path, model_name, 'meshes')
 
         # Create model folder and copy obj and mtl files, as well as textures
         os.makedirs(meshes_path, exist_ok=True)
-        copy2(os.path.join(base_models_path, obj), os.path.join(meshes_path, obj))
-        copy2(os.path.join(base_models_path, mtl), os.path.join(meshes_path, mtl))
+        copy2(os.path.join(base_models_path, model_folder, obj), os.path.join(meshes_path, obj))
+        copy2(os.path.join(base_models_path, model_folder, mtl), os.path.join(meshes_path, mtl))
+
+        # Get list of textures and copy to the Gazebos model folder
+        textures_list = [
+            *glob.glob( '*.png', root_dir=os.path.join(base_models_path, model_folder, 'textures')),
+            *glob.glob( '*.jpg', root_dir=os.path.join(base_models_path, model_folder, 'textures')),
+            *glob.glob( '*.jpeg', root_dir=os.path.join(base_models_path, model_folder, 'textures')),]
         for file in textures_list:
-            copy2(os.path.join(base_models_path, file), os.path.join(meshes_path, file))
+            copy2(os.path.join(base_models_path, model_folder, 'textures', file), os.path.join(meshes_path, file))
 
         with open(os.path.join(gazebo_model_folder_path, 'model.config'), 'w') as file:
             template = templates['model_config_template']
@@ -249,6 +227,44 @@ def generate_gazebo_models(workdir, plant_name):
             }))
         
         models.append(model_name)
+
+    # Generate terrain models
+    base_models_path = os.path.join(workdir, 'terrains')
+    model_folder = glob.glob(terrain_name, root_dir=base_models_path)[0]
+    obj = glob.glob('*.obj', root_dir=os.path.join(base_models_path, model_folder))[0]
+    mtl = glob.glob('*.mtl', root_dir=os.path.join(base_models_path, model_folder))[0]
+
+    model_name = model_folder
+    gazebo_model_folder_path = os.path.join(base_gazebo_path, model_name)
+    meshes_path = os.path.join(base_gazebo_path, model_name, 'meshes')
+
+    # Create model folder and copy obj and mtl files, as well as textures
+    os.makedirs(meshes_path, exist_ok=True)
+    copy2(os.path.join(base_models_path, model_folder, obj), os.path.join(meshes_path, obj))
+    copy2(os.path.join(base_models_path, model_folder, mtl), os.path.join(meshes_path, mtl))
+
+    # Get list of textures and copy to the Gazebos model folder
+    textures_list = [
+        *glob.glob( '*.png', root_dir=os.path.join(base_models_path, model_folder, 'textures')),
+        *glob.glob( '*.jpg', root_dir=os.path.join(base_models_path, model_folder, 'textures')),
+        *glob.glob( '*.jpeg', root_dir=os.path.join(base_models_path, model_folder, 'textures')),]
+    for file in textures_list:
+        copy2(os.path.join(base_models_path, model_folder, 'textures', file), os.path.join(meshes_path, file))
+
+    with open(os.path.join(gazebo_model_folder_path, 'model.config'), 'w') as file:
+        template = templates['model_config_template']
+        file.write(template.substitute({
+            'model_name': model_name,
+            'author_name': 'Marco Ambrosio',
+            'author_email': 'marco.ambrosio@polito.it'
+        }))
+    with open(os.path.join(gazebo_model_folder_path, 'model.sdf'), 'w') as file:
+            template = templates['model_sdf_template']
+            file.write(template.substitute({
+                'model_name': model_name,
+                'mesh_path': f'model://{model_name}/meshes/{obj}'
+            }))
+
     
     return tuple(models)
 
@@ -369,7 +385,7 @@ if __name__=="__main__":
             generate_blender_model(plant_positions, workdir)
 
         if generate_gazebo_models_flag:
-            generate_gazebo_models(workdir, plant_name)
+            generate_gazebo_models(workdir, plant_name, terrain_name)
         
         if generate_gazebo_world_flag:
             generate_gazebo_world(workdir, plant_name, plant_positions, terrain_name)

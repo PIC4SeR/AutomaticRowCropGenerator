@@ -1,6 +1,6 @@
 # Blender 3.3.1
 # www.blender.org
-mtllib terrain.mtl
+mtllib terrain1.mtl
 o Plane
 v -23.825191 -23.827915 -0.005945
 v 23.813980 -23.816677 0.026392

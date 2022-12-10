@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.7'>
-  <model name="terrain">
+  <model name="terrain1">
     <link name='link'>
       <pose>0 0 0 0 0 0</pose>
       <gravity>1</gravity>
@@ -11,7 +11,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://terrain/meshes/terrain.obj</uri>
+            <uri>model://terrain1/meshes/terrain1.obj</uri>
           </mesh>
         </geometry>
         <transparency>0</transparency>
@@ -23,7 +23,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://terrain/meshes/terrain.obj</uri>
+            <uri>model://terrain1/meshes/terrain1.obj</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>

@@ -7,11 +7,11 @@ number_of_rows: 6
 avg_plant_footprint: 0.7
 
 plant_name: "artichoke" # must be inside plants folder
-terrain_name: "terrain" # must be inside terrains folder
+terrain_name: "terrain1" # must be inside terrains folder
 
-generate_blender_model: true
-generate_gazebo_models: false
-generate_gazebo_world: true
+generate_blender_model: false
+generate_gazebo_models: true # if true, generate all the models of the selected plant and terrain
+generate_gazebo_world: true # if true, generate the world with the selected plant and terrain
 # model_names: [
 
 # ]
