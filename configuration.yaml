@@ -1,0 +1,17 @@
+world_file_name: "world.blend"
+
+magic_number: 1
+row_length: 10.0
+rows_in_group: 4
+number_of_rows: 6
+avg_plant_footprint: 0.7
+
+plant_name: "artichoke" # must be inside plants folder
+terrain_name: "terrain" # must be inside terrains folder
+
+generate_blender_model: true
+generate_gazebo_models: false
+generate_gazebo_world: true
+# model_names: [
+
+# ]

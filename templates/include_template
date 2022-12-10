@@ -1,0 +1,7 @@
+<include>
+    <pose>${pose}</pose>
+    <uri>${uri}</uri>
+    <name>${name}</name>
+</include>
+
+${include}
