@@ -1,0 +1,377 @@
+<?xml version="1.0" ?>
+<sdf version='1.6'> 
+  <world name='default'>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+    <pose>0 0 0 0 0 0</pose>
+    <uri>model://terrain1</uri>
+    <name>terrain1</name>
+</include>
+
+<include>
+    <pose>-3.0811496919806163 -4.602020791141164 0.0936387768621607 0 0 2.3681577863382923</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke1</name>
+</include>
+
+<include>
+    <pose>-3.012373571722806 -3.639656862607813 0.21471450480077134 0 0 0.33224184657408307</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke2</name>
+</include>
+
+<include>
+    <pose>-3.04195362527812 -2.5814682026072617 0.3451485388742197 0 0 2.6810490103697093</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke3</name>
+</include>
+
+<include>
+    <pose>-3.0047431284717305 -1.5575709702485556 0.4852005899977946 0 0 -1.9057391910206252</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke4</name>
+</include>
+
+<include>
+    <pose>-3.000047544493529 -0.5548895119705467 0.6297828951833643 0 0 0.6385324295030874</pose>
+    <uri>model://artichoke4</uri>
+    <name>artichoke5</name>
+</include>
+
+<include>
+    <pose>-2.9430607231189874 0.5958122935649116 0.8051827925932926 0 0 -1.5428572166913124</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke6</name>
+</include>
+
+<include>
+    <pose>-2.96134078704355 1.6049381456569836 0.9595134933793352 0 0 2.3824504419604775</pose>
+    <uri>model://artichoke4</uri>
+    <name>artichoke7</name>
+</include>
+
+<include>
+    <pose>-3.0720648063037483 2.5124950032362725 1.0566605430456513 0 0 2.0593363242596805</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke8</name>
+</include>
+
+<include>
+    <pose>-2.9464723596554196 3.595026479120777 1.1873468309786965 0 0 1.6169366539403809</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke9</name>
+</include>
+
+<include>
+    <pose>-2.925302764141669 4.5782417032666585 1.2086998330697913 0 0 2.2291265597057537</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke10</name>
+</include>
+
+<include>
+    <pose>-2.0167018460238433 -4.580191124526571 0.14813585758536763 0 0 2.00058725452194</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke11</name>
+</include>
+
+<include>
+    <pose>-1.946334367681588 -3.6561364317248706 0.2635118470548126 0 0 -2.0108222563943015</pose>
+    <uri>model://artichoke4</uri>
+    <name>artichoke12</name>
+</include>
+
+<include>
+    <pose>-2.0422536137500775 -2.569779867393261 0.40296196499577197 0 0 -1.119949281259892</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke13</name>
+</include>
+
+<include>
+    <pose>-1.9526894390896345 -1.581054350310022 0.5559573846402923 0 0 0.44094398126680456</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke14</name>
+</include>
+
+<include>
+    <pose>-2.007422830458781 -0.5238743651151971 0.7314236212885394 0 0 -2.0374300920724036</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke15</name>
+</include>
+
+<include>
+    <pose>-1.9666642848850069 0.5890444076497658 0.9455679816905159 0 0 -1.9284304362333906</pose>
+    <uri>model://artichoke4</uri>
+    <name>artichoke16</name>
+</include>
+
+<include>
+    <pose>-2.0067093336364317 1.5071895050984758 1.1267027203373825 0 0 -1.7459675679611062</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke17</name>
+</include>
+
+<include>
+    <pose>-1.9660987324708996 2.5918813910018934 1.3423814103490364 0 0 -0.763709115903719</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke18</name>
+</include>
+
+<include>
+    <pose>-1.9778049139990845 3.6398107180359327 1.5018939176606563 0 0 -1.7471264211745283</pose>
+    <uri>model://artichoke4</uri>
+    <name>artichoke19</name>
+</include>
+
+<include>
+    <pose>-1.9757635519257146 4.668207619254242 1.541493419957954 0 0 -0.9079162033628032</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke20</name>
+</include>
+
+<include>
+    <pose>-0.9881691425506824 -4.655653383183535 0.1873759555510125 0 0 -0.1952785192368518</pose>
+    <uri>model://artichoke4</uri>
+    <name>artichoke21</name>
+</include>
+
+<include>
+    <pose>-0.9402374786688165 -3.6256950780739174 0.31419467740538454 0 0 -1.998781864026179</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke22</name>
+</include>
+
+<include>
+    <pose>-0.9753397723087286 -2.607364301703567 0.45485416106458876 0 0 1.4236007530488335</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke23</name>
+</include>
+
+<include>
+    <pose>-1.0258261930158528 -1.4847094132164818 0.6379139078513971 0 0 -0.014533426016425821</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke24</name>
+</include>
+
+<include>
+    <pose>-0.9641453993182522 -0.5379267984392715 0.8280312045308147 0 0 -2.389451859899235</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke25</name>
+</include>
+
+<include>
+    <pose>-0.9348879868039065 0.5244374698887445 1.0694570466764814 0 0 1.292066787062657</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke26</name>
+</include>
+
+<include>
+    <pose>-0.9945079111870182 1.5759820635240653 1.3239390500630104 0 0 2.983942905160065</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke27</name>
+</include>
+
+<include>
+    <pose>-1.0245978050722846 2.59292294667387 1.567357576678624 0 0 -2.224707739750554</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke28</name>
+</include>
+
+<include>
+    <pose>-1.0141141769131328 3.5350021769779874 1.768755787761448 0 0 2.35349427985639</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke29</name>
+</include>
+
+<include>
+    <pose>-0.9685957741780219 4.666156288405262 1.8676485045069713 0 0 0.6778555784708331</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke30</name>
+</include>
+
+<include>
+    <pose>-0.038124567461473156 -4.647983344849379 0.22752294881295665 0 0 1.4607937450164759</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke31</name>
+</include>
+
+<include>
+    <pose>0.052304184447757286 -3.5646420397689815 0.36108346303683175 0 0 -3.0615544971868895</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke32</name>
+</include>
+
+<include>
+    <pose>0.03077474820031647 -2.5373419407644247 0.5088389504781939 0 0 2.9602282212152318</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke33</name>
+</include>
+
+<include>
+    <pose>0.041869616440866286 -1.6341932402417585 0.665669253671137 0 0 2.7109850141039074</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke34</name>
+</include>
+
+<include>
+    <pose>0.010213163104508639 -0.5386129239960417 0.8904620033602562 0 0 -2.2541494529569546</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke35</name>
+</include>
+
+<include>
+    <pose>-0.007768710422676817 0.5023136438064003 1.142039925151681 0 0 3.024032478109052</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke36</name>
+</include>
+
+<include>
+    <pose>-0.007967917000790681 1.5788579634103368 1.4290369888538066 0 0 -2.8548506775339</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke37</name>
+</include>
+
+<include>
+    <pose>-0.08589855616596853 2.5863487667073586 1.6967310516865453 0 0 0.3595266199730034</pose>
+    <uri>model://artichoke4</uri>
+    <name>artichoke38</name>
+</include>
+
+<include>
+    <pose>-0.046434736534708275 3.6418514927323837 1.9345280728378216 0 0 1.1985338632080103</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke39</name>
+</include>
+
+<include>
+    <pose>0.06510652751107497 4.685638549845174 2.025372993350103 0 0 -1.6732577517039655</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke40</name>
+</include>
+
+<include>
+    <pose>2.006485202428245 -4.658350231137477 0.280914836989678 0 0 -2.81541349651516</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke41</name>
+</include>
+
+<include>
+    <pose>2.033788193111816 -3.531518902964091 0.4030981095778028 0 0 -1.9288909052752743</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke42</name>
+</include>
+
+<include>
+    <pose>1.989429801301376 -2.6721515581218704 0.5175118765156839 0 0 -0.4309302316223871</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke43</name>
+</include>
+
+<include>
+    <pose>1.9937557885424086 -1.5043518721071918 0.7071295859873785 0 0 2.63522487926599</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke44</name>
+</include>
+
+<include>
+    <pose>2.028915673118818 -0.4766761855587442 0.9052873922199987 0 0 -1.0274645309014283</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke45</name>
+</include>
+
+<include>
+    <pose>1.972053657853052 0.4855216286904782 1.1172185316534238 0 0 1.5400605709247221</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke46</name>
+</include>
+
+<include>
+    <pose>1.9408831723658932 1.4950455950045647 1.3498576783554204 0 0 1.7515528431113054</pose>
+    <uri>model://artichoke2</uri>
+    <name>artichoke47</name>
+</include>
+
+<include>
+    <pose>2.0824436864620575 2.5429933297867056 1.5501811530321665 0 0 -1.0344531415257134</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke48</name>
+</include>
+
+<include>
+    <pose>1.9433141753512844 3.5990006418542406 1.7394135044445354 0 0 0.4472706270898503</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke49</name>
+</include>
+
+<include>
+    <pose>1.948927559265802 4.715197581067086 1.7935607452867863 0 0 0.28389503737165267</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke50</name>
+</include>
+
+<include>
+    <pose>2.9609357125214046 -4.611815949054788 0.29584682250487815 0 0 0.7707881262400988</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke51</name>
+</include>
+
+<include>
+    <pose>2.980579827161256 -3.587638791449839 0.39506255624364534 0 0 -2.140941114442196</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke52</name>
+</include>
+
+<include>
+    <pose>2.998688203059354 -2.624699805948234 0.5094989433400576 0 0 0.815691961564784</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke53</name>
+</include>
+
+<include>
+    <pose>2.903406607076364 -1.5431355455606819 0.6694211008423053 0 0 2.3866999410330303</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke54</name>
+</include>
+
+<include>
+    <pose>2.998935841613077 -0.5865180712364948 0.8256045642951935 0 0 2.659640059406102</pose>
+    <uri>model://artichoke5</uri>
+    <name>artichoke55</name>
+</include>
+
+<include>
+    <pose>2.930817994556569 0.6030650331365708 1.0532613606669032 0 0 0.6074501293846808</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke56</name>
+</include>
+
+<include>
+    <pose>2.9926165509652476 1.5577832690483522 1.2218763026437969 0 0 1.4682982828320608</pose>
+    <uri>model://artichoke4</uri>
+    <name>artichoke57</name>
+</include>
+
+<include>
+    <pose>3.002564683265093 2.5200523985360728 1.3763004173920765 0 0 -0.3609951780251772</pose>
+    <uri>model://artichoke1</uri>
+    <name>artichoke58</name>
+</include>
+
+<include>
+    <pose>2.99464692691566 3.6738184594466214 1.5012365357056543 0 0 1.5564423262886748</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke59</name>
+</include>
+
+<include>
+    <pose>2.997095859577526 4.727387033080476 1.5081050202636095 0 0 -1.4879770585980188</pose>
+    <uri>model://artichoke3</uri>
+    <name>artichoke60</name>
+</include>
+
+
+
+  </world>
+</sdf>

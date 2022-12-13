@@ -5,7 +5,11 @@
       <uri>model://sun</uri>
     </include>
 
-    ${include}
+    <model  name="${plant_name}_models">
+
+      ${include}
+
+    </model>
 
   </world>
 </sdf>

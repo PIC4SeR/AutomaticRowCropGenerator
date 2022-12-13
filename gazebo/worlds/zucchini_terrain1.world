@@ -1,0 +1,377 @@
+<?xml version="1.0" ?>
+<sdf version='1.6'> 
+  <world name='default'>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+    <pose>0 0 0 0 0 0</pose>
+    <uri>model://terrain1</uri>
+    <name>terrain1</name>
+</include>
+
+<include>
+    <pose>-3.0054553903732333 -4.718715383944131 0.08287359394457874 0 0 1.5792075020105578</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini1</name>
+</include>
+
+<include>
+    <pose>-2.9733193604851205 -3.69051936789329 0.21028968224111846 0 0 0.16639728857944158</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini2</name>
+</include>
+
+<include>
+    <pose>-3.0371396755559945 -2.609314747282623 0.3417802291292364 0 0 -2.4985019551563954</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini3</name>
+</include>
+
+<include>
+    <pose>-3.0715484794061823 -1.516470895141409 0.48644910161078536 0 0 1.4594304487843974</pose>
+    <uri>model://zucchini5</uri>
+    <name>zucchini4</name>
+</include>
+
+<include>
+    <pose>-2.9769029164837923 -0.5104380998333055 0.6383699652142418 0 0 2.902976278188812</pose>
+    <uri>model://zucchini5</uri>
+    <name>zucchini5</name>
+</include>
+
+<include>
+    <pose>-3.026571887923668 0.5554288224782096 0.7872412265921425 0 0 -1.7299895096880316</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini6</name>
+</include>
+
+<include>
+    <pose>-2.9695658782621726 1.5150873147282025 0.9445462805967032 0 0 -2.72843572131153</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini7</name>
+</include>
+
+<include>
+    <pose>-2.9348972039436676 2.5337030814547337 1.0915011209306238 0 0 -2.3458226729928606</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini8</name>
+</include>
+
+<include>
+    <pose>-2.9578118909420463 3.6251394311017595 1.185640929145559 0 0 -1.215336390899863</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini9</name>
+</include>
+
+<include>
+    <pose>-3.006483828244528 4.583483466056008 1.1830611101187005 0 0 1.2820778149040146</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini10</name>
+</include>
+
+<include>
+    <pose>-1.971659771886997 -4.671377315143479 0.13946984011078536 0 0 -2.9820759482572</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini11</name>
+</include>
+
+<include>
+    <pose>-2.051641058602187 -3.6364769560277295 0.2608577982693593 0 0 1.2884565736961795</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini12</name>
+</include>
+
+<include>
+    <pose>-2.069701266723986 -2.557987782521409 0.4030375221305813 0 0 -0.6052828389406266</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini13</name>
+</include>
+
+<include>
+    <pose>-1.9977128111175702 -1.5676526093762664 0.5548368282720002 0 0 -2.838792051637186</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini14</name>
+</include>
+
+<include>
+    <pose>-1.9883534487175747 -0.530183947799477 0.7322018189263522 0 0 -2.87045101001259</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini15</name>
+</include>
+
+<include>
+    <pose>-1.9907170324819519 0.5067326992282539 0.9264736728281294 0 0 -0.22623771746171473</pose>
+    <uri>model://zucchini5</uri>
+    <name>zucchini16</name>
+</include>
+
+<include>
+    <pose>-2.053765115341296 1.6169734730734495 1.139475199905625 0 0 -1.948739965205254</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini17</name>
+</include>
+
+<include>
+    <pose>-1.9804578512705324 2.586955177694444 1.3375641175382689 0 0 0.10112296355541384</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini18</name>
+</include>
+
+<include>
+    <pose>-1.9806143454005167 3.5934182672075377 1.4963133104411985 0 0 -2.3618405183746134</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini19</name>
+</include>
+
+<include>
+    <pose>-1.9916605267256642 4.643069176745795 1.5364717111063104 0 0 -0.7782252110578334</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini20</name>
+</include>
+
+<include>
+    <pose>-0.991367377670096 -4.688670537741578 0.18349833984559047 0 0 2.7337940709010455</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini21</name>
+</include>
+
+<include>
+    <pose>-0.9684163296655767 -3.5901247063867308 0.3175626353324745 0 0 1.7170416195892244</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini22</name>
+</include>
+
+<include>
+    <pose>-1.0672230912623988 -2.6025623458164406 0.4506182236137725 0 0 2.5111744986929345</pose>
+    <uri>model://zucchini5</uri>
+    <name>zucchini23</name>
+</include>
+
+<include>
+    <pose>-0.9593876692625403 -1.541883573109154 0.6317298954936059 0 0 -2.3438079049378935</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini24</name>
+</include>
+
+<include>
+    <pose>-1.001509506841665 -0.4943078495444085 0.8338957785114545 0 0 1.7999274408685322</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini25</name>
+</include>
+
+<include>
+    <pose>-1.0101007454111743 0.503981925720381 1.056092610737758 0 0 -1.8457540558085253</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini26</name>
+</include>
+
+<include>
+    <pose>-0.9987424289365072 1.5764131290212289 1.323418487154491 0 0 1.794612062518648</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini27</name>
+</include>
+
+<include>
+    <pose>-0.9456978509051549 2.6098478377611904 1.585159507271175 0 0 -0.5576869353713301</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini28</name>
+</include>
+
+<include>
+    <pose>-1.0553112648817589 3.638931207452447 1.7745726498159882 0 0 0.26636631050951465</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini29</name>
+</include>
+
+<include>
+    <pose>-0.9990421362995549 4.728692024552073 1.8592815354784042 0 0 0.9079536823793326</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini30</name>
+</include>
+
+<include>
+    <pose>-0.018519667034447896 -4.629313425189124 0.23029266133935838 0 0 0.26703372856240337</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini31</name>
+</include>
+
+<include>
+    <pose>-0.0050752220036357045 -3.6265827728825397 0.3511096637362188 0 0 1.8886179422100158</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini32</name>
+</include>
+
+<include>
+    <pose>-0.03928077859532023 -2.6096114479297445 0.49495369353986096 0 0 -0.6685826620806385</pose>
+    <uri>model://zucchini5</uri>
+    <name>zucchini33</name>
+</include>
+
+<include>
+    <pose>0.023599194747627762 -1.5873095870217184 0.6737421455938523 0 0 -1.089219707003735</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini34</name>
+</include>
+
+<include>
+    <pose>0.005061419503878328 -0.5040492082325629 0.8980285071139074 0 0 -1.281490096515485</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini35</name>
+</include>
+
+<include>
+    <pose>-0.029434684942617084 0.4933152559549146 1.1385268954557357 0 0 -0.4074327387324175</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini36</name>
+</include>
+
+<include>
+    <pose>-0.008010445692118395 1.588137745220501 1.431558764860451 0 0 -2.1679025918966093</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini37</name>
+</include>
+
+<include>
+    <pose>0.0937143976132985 2.610819665144857 1.7093551939797522 0 0 0.3344151325875826</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini38</name>
+</include>
+
+<include>
+    <pose>-0.025363199270262028 3.6053467986973473 1.92995469692882 0 0 -1.9403896027286447</pose>
+    <uri>model://zucchini5</uri>
+    <name>zucchini39</name>
+</include>
+
+<include>
+    <pose>-0.07845620126413291 4.661785334049191 2.02397490181498 0 0 -2.3366828042606635</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini40</name>
+</include>
+
+<include>
+    <pose>2.0688341332759634 -4.596294736022373 0.2878558816390064 0 0 -0.45894417311216396</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini41</name>
+</include>
+
+<include>
+    <pose>2.0104437084689684 -3.563843198656041 0.39907863888453465 0 0 1.5037822298392296</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini42</name>
+</include>
+
+<include>
+    <pose>2.013915542742531 -2.5088146574278425 0.541437641731753 0 0 2.9483725483672174</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini43</name>
+</include>
+
+<include>
+    <pose>1.9741191403381357 -1.621089899215218 0.6867398000909186 0 0 0.7809789030591392</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini44</name>
+</include>
+
+<include>
+    <pose>2.058722885460046 -0.5898776098031787 0.8806847768983479 0 0 -0.24408516056660812</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini45</name>
+</include>
+
+<include>
+    <pose>1.914512290057323 0.4621376983880736 1.1157850199346344 0 0 1.830556690465163</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini46</name>
+</include>
+
+<include>
+    <pose>1.9768597471925164 1.5007106027785837 1.3473137635326213 0 0 2.2351480402018975</pose>
+    <uri>model://zucchini5</uri>
+    <name>zucchini47</name>
+</include>
+
+<include>
+    <pose>2.0008027587097383 2.556620597815497 1.5649808559601737 0 0 0.8379926323289069</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini48</name>
+</include>
+
+<include>
+    <pose>1.9722017592126646 3.617666923530152 1.7358837605650643 0 0 -1.220861203758327</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini49</name>
+</include>
+
+<include>
+    <pose>2.0134223360349845 4.5800628632432945 1.776817251508337 0 0 -0.019971747312305332</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini50</name>
+</include>
+
+<include>
+    <pose>2.9954077140927526 -4.679081949513459 0.2903016828247381 0 0 -0.012909127059430148</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini51</name>
+</include>
+
+<include>
+    <pose>2.9640850837450703 -3.5783383917888765 0.3961783023499697 0 0 -2.62962232187941</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini52</name>
+</include>
+
+<include>
+    <pose>3.025077667650578 -2.5100292021120905 0.5239331112781664 0 0 -0.21630665898912493</pose>
+    <uri>model://zucchini5</uri>
+    <name>zucchini53</name>
+</include>
+
+<include>
+    <pose>2.938175516281571 -1.5574719731307665 0.665567834547799 0 0 2.7506665589310693</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini54</name>
+</include>
+
+<include>
+    <pose>2.9847332444489307 -0.49541165016983896 0.84275777299932 0 0 -0.6958683913075228</pose>
+    <uri>model://zucchini4</uri>
+    <name>zucchini55</name>
+</include>
+
+<include>
+    <pose>2.970850466868649 0.575307380336702 1.043309980903176 0 0 -2.3525156432553516</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini56</name>
+</include>
+
+<include>
+    <pose>2.945789728493906 1.6083503889630981 1.2383120710624447 0 0 -0.5823448211126658</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini57</name>
+</include>
+
+<include>
+    <pose>2.9415501357303286 2.53191220061378 1.3906707471573214 0 0 1.9819263610756632</pose>
+    <uri>model://zucchini2</uri>
+    <name>zucchini58</name>
+</include>
+
+<include>
+    <pose>3.0179347377647243 3.627934912957945 1.4922193134864086 0 0 1.6745324218057585</pose>
+    <uri>model://zucchini1</uri>
+    <name>zucchini59</name>
+</include>
+
+<include>
+    <pose>3.0115481304083915 4.62731816925014 1.5088731491305338 0 0 -1.4226880320163486</pose>
+    <uri>model://zucchini3</uri>
+    <name>zucchini60</name>
+</include>
+
+
+
+  </world>
+</sdf>
