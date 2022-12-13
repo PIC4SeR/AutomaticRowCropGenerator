@@ -1,17 +1,19 @@
-world_file_name: "world.blend"
-
-magic_number: 1
-row_length: 10.0
-rows_in_group: 4
-number_of_rows: 6
-avg_plant_footprint: 0.7
-
-plant_name: "artichoke" # must be inside plants folder
+plant_name: "chard" # must be inside plants folder
 terrain_name: "terrain1" # must be inside terrains folder
 
-generate_blender_model: false
-generate_gazebo_models: true # if true, generate all the models of the selected plant and terrain
-generate_gazebo_world: true # if true, generate the world with the selected plant and terrain
-# model_names: [
+magic_number: 0.4
+row_length: 5.0
+number_of_rows: 20
+rows_in_group: 5
+avg_plant_footprint: 0.2
 
-# ]
+# if true, generate the world in blender in the root folder of this repo
+generate_blender_model: false
+
+# if true, generate all the models of the selected plant and terrain
+# inside gazebo/models folder
+generate_gazebo_models: true 
+
+# if true, generate the world with the selected plant and terrain
+# inside gazebo/worlds folder, named <plant_name>_<terrain_name>.world
+generate_gazebo_world: true 

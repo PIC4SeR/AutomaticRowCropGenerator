@@ -36,6 +36,9 @@ from scipy.interpolate import griddata
 
 
 def load_models(source_file, dest_file, location):
+    """
+    Load models from source_file and append them to dest_file
+    """
     global COUNTER_MODELS
     
     print("Loading model from {}".format(source_file))
@@ -49,8 +52,8 @@ def load_models(source_file, dest_file, location):
     
     plant = bpy.data.objects['plant']
     plant.name = "plant"+str(COUNTER_MODELS)
-    if len(plant.children) != 0:
-        plant.children[0].name = "leaves"+str(COUNTER_MODELS)
+    # if len(plant.children) != 0:
+    #     plant.children[0].name = "leaves"+str(COUNTER_MODELS)
         
     plant.location = location
     COUNTER_MODELS += 1
@@ -58,6 +61,9 @@ def load_models(source_file, dest_file, location):
 
     
 def duplicate_models(plant_list, location, yaw):
+    """
+    Duplicate models from plant_list at location and with yaw
+    """
     global COUNTER_MODELS
     plant_name = "plant"+str(random.choice(plant_list))
     bpy.context.view_layer.objects.active = bpy.data.objects[plant_name]
@@ -69,42 +75,46 @@ def duplicate_models(plant_list, location, yaw):
     bpy.ops.object.duplicate(linked = True)    
     plant = bpy.context.view_layer.objects.active
     plant.name = "plant"+str(COUNTER_MODELS)
-    if len(plant.children) != 0:
-        plant.children[0].name = "leaves"+str(COUNTER_MODELS)
+    # if len(plant.children) != 0:
+    #     plant.children[0].name = "leaves"+str(COUNTER_MODELS)
     COUNTER_MODELS += 1
     
     plant.location = location
-    # plant.rotation_euler = (0.0, 0.0, yaw)
-        
+    plant.rotation_axis_angle = (0.0, 0.0, 1.0, yaw)
+
         
 class TerrainHeightMap:
+    """
+    Terrain height map class.
+    Loads the terrain and provides a callable function to get the height of the terrain at a given position
+    """
+
+    def __init__(self, object):
         
-        def __init__(self, object):
-            
-            vertices = object.data.vertices
-            matrix = object.matrix_world
-            scale = matrix.to_scale()
-            
-            x = []
-            y = []
-            z = []
-            for v in vertices:
-                v_scaled = scale * v.co
-                x.append(v_scaled[0])
-                y.append(v_scaled[1])
-                z.append(v_scaled[2])
-            
-            self.x = np.array(x)
-            self.y = np.array(y)
-            self.z = np.array(z)
-    
-        def get_height(self, x_pos, y_pos):
-            z = float(griddata((self.x,self.y), self.z, (x_pos, y_pos), method='cubic'))
-            
-            if np.isnan(z):
-                z = float(griddata((self.x,self.y), self.z, (x_pos, y_pos), method='nearest'))
-            
-            return z
+        vertices = object.data.vertices
+        matrix = object.matrix_world
+        scale = matrix.to_scale()
+        
+        x = []
+        y = []
+        z = []
+        for v in vertices:
+            v_scaled = scale * v.co
+            x.append(v_scaled[0])
+            y.append(v_scaled[1])
+            z.append(v_scaled[2])
+        
+        self.x = np.array(x)
+        self.y = np.array(y)
+        self.z = np.array(z)
+
+    def get_height(self, x_pos, y_pos):
+        z = float(griddata((self.x,self.y), self.z, (x_pos, y_pos), method='cubic'))
+        
+        if np.isnan(z):
+            z = float(griddata((self.x,self.y), self.z, (x_pos, y_pos), method='nearest'))
+        
+        return z
 
 def load_terrain(terrain_name, dest_file):
     """
@@ -152,11 +162,16 @@ def get_plant_positions(number_of_rows, rows_in_group, magic_number, height_map,
                 random.uniform(min_yaw, max_yaw)))
     
     print("Number of plants: {}".format(len(plant_positions)))
+    
     return plant_positions
 
                     
 
 def load_templates(workdir):
+    """
+    Load templates for generating Gazebo models
+    """
+
     templates = dict()
     template_names = glob.glob('*_template', root_dir=os.path.join(workdir, 'templates'))
     for name in template_names:
@@ -270,9 +285,13 @@ def generate_gazebo_models(workdir, plant_name, terrain_name):
 
 
 def generate_gazebo_world(workdir, plant_name, plant_positions, terrain_name):
+    """
+    Generate a Gazebo world file with the given plant and terrain models
+    """
+
     templates = load_templates(workdir)
     gazebo_models_path = os.path.join(workdir, 'gazebo', 'models')
-    gazebo_world_path = os.path.join(workdir, 'gazebo', 'worlds', plant_name+'.world')
+    gazebo_world_path = os.path.join(workdir, 'gazebo', 'worlds', plant_name + '_' + terrain_name + '.world')
 
     models = glob.glob(f'*{plant_name}*', root_dir=gazebo_models_path)
     if len(models) == 0:
@@ -286,6 +305,7 @@ def generate_gazebo_world(workdir, plant_name, plant_positions, terrain_name):
 
     # Add terrain
     world = Template(world.substitute({
+                'plant_name': plant_name,
                 'include': include.safe_substitute({
                     'pose': f'0 0 0 0 0 0',
                     'uri': f'model://{terrain_name}',
@@ -320,10 +340,14 @@ def generate_gazebo_world(workdir, plant_name, plant_positions, terrain_name):
 
 
 def generate_blender_model(plant_positions, workdir):
+    """
+    Generate a Blender model file with the given plant and terrain models
+    """
+
     global WORLD_FILE_PATH
 
     print("Generating Blender world...")
-    plant_file_paths = glob.glob(os.path.join(workdir, 'plants', plant_name, "*.blend"))
+    plant_file_paths = glob.glob(os.path.join(workdir, 'plants', plant_name, "*", "*.blend"))
     plant_list_range = list(range(len(plant_file_paths)))
     print("Found {} plants".format(len(plant_file_paths)))
 
@@ -369,7 +393,7 @@ if __name__=="__main__":
         
         # PATHS
         workdir = os.getcwd()
-        WORLD_FILE_PATH = os.path.join(workdir, "world.blend") # where to save the world
+        WORLD_FILE_PATH = os.path.join(workdir, 'blender', plant_name + '_' + terrain_name + ".blend") # where to save the world
 
         # select all objects and delete
         bpy.ops.object.select_all(action='SELECT')
