@@ -30,6 +30,8 @@ The code in this repository provides useful tools to automatically generate mode
 
 ## Installation procedure
 
+### Setup Blender Python environment
+
 Open a terminal inside this folder and run the following command:
 
 ``` 
